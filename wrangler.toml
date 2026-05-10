@@ -15,3 +15,6 @@ cwd = "."
 
 [build.upload]
 format = "service-worker"
+
+[env.production]
+vars = { VITE_MAPBOX_TOKEN = "" }
