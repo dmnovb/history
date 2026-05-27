@@ -5,6 +5,7 @@ interface Props {
   figures: HistoricalFigure[]
   countryName: string
   onBack: () => void
+  onFigureClick: (id: string) => void
 }
 
 function formatDate(date: number | DateRange): string {
@@ -15,7 +16,7 @@ function formatDate(date: number | DateRange): string {
   return `${fmt(date.start)} – ${fmt(date.end)}`
 }
 
-export function EventPanel({ event, figures, countryName, onBack }: Props) {
+export function EventPanel({ event, figures, countryName, onBack, onFigureClick }: Props) {
   const paragraphs = event.narrative.trim().split(/\n\n+/)
 
   return (
@@ -55,9 +56,11 @@ export function EventPanel({ event, figures, countryName, onBack }: Props) {
             <div className="event-figures-label">Figures Involved</div>
             <ul className="event-figures-list">
               {figures.map((fig) => (
-                <li key={fig.id} className="event-figure-row">
-                  <span className="event-figure-name">{fig.name}</span>
-                  <span className="event-figure-role">{fig.role}</span>
+                <li key={fig.id}>
+                  <button className="event-figure-row" onClick={() => onFigureClick(fig.id)}>
+                    <span className="event-figure-name">{fig.name}</span>
+                    <span className="event-figure-role">{fig.role}</span>
+                  </button>
                 </li>
               ))}
             </ul>

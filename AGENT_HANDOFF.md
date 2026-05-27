@@ -15,14 +15,14 @@ Building a **Mapbox-based historical knowledge app** where users explore Europea
 ### Design & Specifications
 - ✅ Complete problem discovery (via grill-me session)
 - ✅ MVP scope locked in (75-100 events, 100-200 figures, Europe/US only)
-- ✅ Full spec documentation in `/specs/` folder:
-  - `00-OVERVIEW.md` — Start here
-  - `data/DATA_MODEL.md` — TypeScript interfaces
-  - `design/DESIGN_SYSTEM.md` — Warm Warp aesthetic
-  - `technical/ARCHITECTURE.md` — Tech stack & file structure
-  - `technical/IMPLEMENTATION.md` — Detailed checklist
-  - `content/SOURCING.md` — How to curate events/figures
-  - `ROADMAP.md` — Phases 2-6
+- ✅ Full spec documentation in `specs/` folder:
+  - `specs/00-OVERVIEW.md` — Start here
+  - `specs/data/DATA_MODEL.md` — TypeScript interfaces
+  - `specs/design/DESIGN_SYSTEM.md` — Warm Warp aesthetic
+  - `specs/technical/ARCHITECTURE.md` — Tech stack & file structure
+  - `specs/technical/IMPLEMENTATION.md` — Detailed checklist
+  - `specs/content/SOURCING.md` — How to curate events/figures
+  - `specs/ROADMAP.md` — Phase breakdown
 
 ### Design System
 - ✅ Warm Warp-inspired aesthetic implemented in `src/index.css`

@@ -23,7 +23,10 @@ export function MapContainer({ selectedCountry, onCountryClick, eventCounts }: P
   const markersRef = useRef<mapboxgl.Marker[]>([])
   // Keep callback ref to avoid re-initialising the map
   const onClickRef = useRef(onCountryClick)
-  onClickRef.current = onCountryClick
+
+  useEffect(() => {
+    onClickRef.current = onCountryClick
+  }, [onCountryClick])
 
   useEffect(() => {
     if (mapRef.current || !containerRef.current) return
@@ -168,7 +171,9 @@ export function MapContainer({ selectedCountry, onCountryClick, eventCounts }: P
       mapRef.current = null
       styleReady.current = false
     }
-  }, []) // run once
+  // The Mapbox instance owns its mutable layer/marker lifecycle after mount.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Sync selected-country highlight whenever prop changes
   useEffect(() => {
